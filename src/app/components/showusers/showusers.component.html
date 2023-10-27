@@ -1,0 +1,22 @@
+<div class="container-md mt-5">
+  <h2 class="text-danger text-center text-capitalize mb-3"> all our users</h2>
+  <table class="table table-striped table-secondary text-capitalize">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Adress</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- using for loop on the array of users to show it on table -->
+      <tr *ngFor="let user of users">
+        <td>{{user.name}}</td>
+        <td>{{user.age}}</td>
+        <td>{{user.address}}</td>
+        <td>{{user.email}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

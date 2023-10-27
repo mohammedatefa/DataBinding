@@ -1,0 +1,33 @@
+<div class="container py-4">
+<div class="row">
+<div class="col-md-5 bg-light">
+  <form action="" class="was-validated" (ngSubmit)="adduser()">
+    <div class="mb-3 mt-3">
+      <label for="uname" class="form-label">Username:</label>
+      <input type="text" class="form-control" id="uname" placeholder="Enter username" name="uname" required [(ngModel)]="name" [ngClass]="{'is-valid':!namevalidate,'is-invalid':namevalidate}">
+      <div *ngIf="namevalidate" class="text-danger">*name must be 5 chars or more</div>
+    </div>
+    <div class="mb-3">
+      <label for="age" class="form-label">Age:</label>
+      <input type="number" class="form-control" id="age" placeholder="Enter Age" name="age" required
+      [(ngModel)]="age" [ngClass]="{'is-valid':!agevalidate,'is-invalid':agevalidate}">
+      <div *ngIf="agevalidate" class="text-danger">the age must betwenn 18-24</div>
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="address" class="form-label">Address:</label>
+      <input type="text" class="form-control" id="address" placeholder="Enter address" name="address" required [(ngModel)]="address" [ngClass]="{'is-valid':addressvalidate,'is-invalid':!addressvalidate}">
+      <div *ngIf="!addressvalidate" class="text-danger">Address must be Minya or Giza</div>
+    </div>
+    <div class="mb-3 mt-3">
+      <label for="email" class="form-label">Email:</label>
+      <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" required [(ngModel)]="email">
+      <div class="invalid-feedback">Please fill out this field.</div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+<div class="col-7 bg-dark">
+  <app-student [usersList]="listofusers"></app-student>
+</div>
+</div>
+</div>

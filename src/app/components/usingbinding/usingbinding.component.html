@@ -1,0 +1,36 @@
+<div class="container my-3">
+  <!-- using class binding -->
+  <p [class.binding]="number>50">using class binding</p>
+  <p [class]="number>50?'text-center binding':'text-start'">using class binding</p>
+  <p [class.binding]="name=='mohamed'">using another property like name property name => {{name}}</p>
+
+  <!-- using style binding -->
+  <p
+   [style.color]="name=='mohamed'?'white':'green'"
+   [style.background-color]="name=='mohamed'?'blue':'green'"
+   [style.padding.px]="name=='mohamed'?'20':'10'"
+   >uisng style binding</p>
+
+
+   <!-- using ng class -->
+   <!-- note that if you using *ngClass="" it remove all the propertyin another  -->
+
+   <p [ngClass]="{
+    'bg-danger text-center p-4 text-light':number>50
+   }">using ng class directive with the number value</p>
+   <!-- you can use also function -->
+   <p [ngClass]="{'binding':isvalid}">
+    using ngclass directive with function
+   </p>
+
+   <!--using ngstyle  -->
+
+   <p [ngStyle]="{'color':name=='mohamed'?'red':'blue'}">
+    using ng style with the value of name
+   </p>
+
+   <p [ngStyle]="{'color':number>100?'red':'yellow',
+                  'padding.px':number>100?'20':'30',
+                  'background-color':number>100?'red':'blue'}"
+                  > ng style with value of number</p>
+</div>
